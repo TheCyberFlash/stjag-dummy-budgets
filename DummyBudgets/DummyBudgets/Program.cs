@@ -1,3 +1,6 @@
+using DummyBudgets.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace DummyBudgets
 {
     public class Program
@@ -7,6 +10,8 @@ namespace DummyBudgets
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddDbContext<BudgetDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
