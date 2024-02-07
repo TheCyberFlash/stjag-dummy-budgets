@@ -1,0 +1,26 @@
+﻿@model DummyBudgets
+
+<h1>Create Budget</h1>
+<form asp-action="Create">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+    </div>
+
+    <div>
+        <label asp-for="Amount"></label>
+        <input asp-for="Amount" />
+    </div>
+
+    <div>
+        <label asp-for="StartDate"></label>
+        <input asp-for="StartDate" />
+    </div>
+
+    <div>
+        <label asp-for="EndDate"></label>
+        <input asp-for="EndDate" />
+    </div>
+
+    <button type="submit">Create</button>
+</form>
