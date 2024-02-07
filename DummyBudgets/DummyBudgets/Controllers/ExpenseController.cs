@@ -41,5 +41,18 @@ namespace DummyBudgets.Controllers
             ViewBag.Budgets = _dbContext.Budgets.ToList();
             return View(expense);
         }
+
+        [HttpGet("details/{id}")]
+        public IActionResult Details(int id)
+        {
+            var expense = _dbContext.Expenses.Include(e => e.Budget).FirstOrDefault(e => e.Id == id);
+
+            if (expense == null)
+            {
+                return NotFound();
+            }
+
+            return View(budget);
+        }
     }
 }
