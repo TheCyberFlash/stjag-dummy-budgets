@@ -1,0 +1,26 @@
+﻿@model Expense
+
+<h1>Create Expense</h1>
+<form asp-action="Create">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+    </div>
+
+    <div>
+        <label asp-for="Amount"></label>
+        <input asp-for="Amount" />
+    </div>
+
+    <div>
+        <label asp-for="Date"></label>
+        <input asp-for="Date" />
+    </div>
+
+    <div>
+        <label asp-for="BudgetId"></label>
+        <input asp-for="BudgetId" />
+    </div>
+
+    <button type="submit">Create</button>
+</form>
