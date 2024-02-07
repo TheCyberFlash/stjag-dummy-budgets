@@ -1,0 +1,11 @@
+﻿@model List<Budget>
+
+<h1>Budgets</h1>
+<ul>
+    @foreach (var budget in Model)
+    {
+        <li>
+            <a asp-action="Details" asp-route-id="@budget.Id">@budget.Name</a>
+        </li>
+    }
+</ul>
