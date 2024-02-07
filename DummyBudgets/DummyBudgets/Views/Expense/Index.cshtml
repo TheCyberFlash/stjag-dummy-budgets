@@ -1,0 +1,11 @@
+﻿@model List<Expense>
+
+<h1>Expenses</h1>
+<ul>
+    @foreach (var expense in Model)
+    {
+        <li>
+            <a asp-action="Details" asp-route-id="@expense.Id">@expense.Name</a>
+        </li>
+    }
+</ul>
