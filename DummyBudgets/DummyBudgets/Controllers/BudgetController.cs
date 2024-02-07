@@ -39,5 +39,18 @@ namespace DummyBudgets.Controllers
             }
             return View(budget);
         }
+
+        [HttpGet("details/{id}")]
+        public IActionResult Details(int id)
+        {
+            var budget = _dbContext.Budgets.Include(b =>b.Expenses).FirstOrDefault(b => b.Id == id);
+
+            if (budget == null)
+            {
+                return NotFound();
+            }
+
+            return View(budget);
+        }
     }
 }
