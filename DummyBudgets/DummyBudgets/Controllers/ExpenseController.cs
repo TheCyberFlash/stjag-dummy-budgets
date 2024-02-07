@@ -52,7 +52,7 @@ namespace DummyBudgets.Controllers
                 return NotFound();
             }
 
-            return View(budget);
+            return View(expense);
         }
     }
 }
